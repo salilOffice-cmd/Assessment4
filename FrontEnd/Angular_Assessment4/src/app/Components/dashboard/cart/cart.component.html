@@ -1,0 +1,25 @@
+<table border="1" cellspacing="0">
+    <tr>
+        <th>carId</th>
+        <th>carName</th>
+        <th>contact_Details</th>
+        <th>price</th>
+        <th>category</th>
+    </tr>
+
+    <tr *ngFor="let car of gotCars">
+        <td>{{car.carId}}</td>
+        <td>{{car.carName}}</td>
+        <td>{{car.contact_Details}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.category}}</td>
+    </tr>
+    
+</table>
+<br><br><br><br>
+License Number:<input type="text" placeholder="License" #license> <br>
+Date:<input type="date"  #date> <br>
+Time: <input type="time" #time>
+
+<br> <br>
+<button (click)="sendToCartAPI(gotCars,license.value, date.value, time.value )">Add Order</button>
